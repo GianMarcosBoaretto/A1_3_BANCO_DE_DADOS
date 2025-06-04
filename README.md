@@ -1,26 +1,41 @@
-# 📚 Banco de Dados: Rede Social Acadêmica
+# 📚 Banco de Dados MySQL: Rede Social Acadêmica
 
-Este repositório contém o projeto completo do banco de dados para uma **rede social acadêmica** que conecta mentores e mentorados, permitindo sessões de mentoria, mensagens, grupos de estudo, seguidores, bloqueios, notificações e controle de eventos do sistema.
-
----
-
-## 🗂 Estrutura do Projeto
-
-O projeto está organizado em arquivos SQL com diferentes responsabilidades:
-
-- `01_ddl_criacao_tabelas.sql`: Criação das tabelas principais e relacionamentos.
-- `02_dml_inserts_exemplo.sql`: Exemplos de inserts para testes.
-- `03_procedures.sql`: Procedures para encapsular operações de inserção.
-- `04_functions.sql`: Funções com retorno para deleção controlada.
-- `05_triggers_logs_notificacoes.sql`: Triggers para logs automáticos e notificações.
-- `06_views.sql`: Views para facilitar consultas encapsuladas.
-- `07_cursor_e_bloqueios.sql`: Exemplo de cursor e uso de LOCK TABLE.
-- `08_indices_otimizacoes.sql`: Análise e criação de índices otimizados.
-- `09_transacoes.sql`: Exemplo de uso de transações e tratamento de falhas.
+Este repositório contém todos os scripts SQL para criação e manipulação do banco de dados da **rede social acadêmica**. O projeto inclui estrutura de tabelas, dados de exemplo, procedures, funções, triggers, views, índices, cursors e transações, visando uma aplicação robusta e performática.
 
 ---
 
-## 🚀 Funcionalidades SQL Implementadas
+## 🗂 Organização dos Scripts
+
+Os arquivos estão organizados conforme o tipo de modificação, seguindo o padrão:
+
+| Arquivo                      | Descrição                                             |
+|-----------------------------|-------------------------------------------------------|
+| `SCRIPTS_CREATE.sql`         | Criação das tabelas e relacionamentos                 |
+| `SCRIPTS_INSERT.sql`         | População inicial das tabelas com dados de exemplo    |
+| `SCRIPTS_PROCEDURE.sql`      | Procedures para inserção encapsulada                   |
+| `SCRIPTS_FUNCTION.sql`       | Funções para deleção controlada com retorno de status |
+| `SCRIPTS_TRIGGER.sql`        | Triggers para logs automáticos e notificações          |
+| `SCRIPTS_VIEW.sql`           | Views para consultas simplificadas e encapsuladas      |
+| `SCRIPTS_INDEX.sql`          | Criação de índices para otimização                      |
+| `SCRIPTS_CURSOR.sql`         | Exemplo de cursor para processamento em lote           |
+| `SCRIPTS_TRANSACTION.sql`    | Exemplos de uso de transações e bloqueios (LOCK TABLE) |
+
+---
+
+## 🚀 Funcionalidades SQL
+
+- **Estrutura completa** das tabelas com chaves primárias, estrangeiras e relacionamentos em cascata.
+- **População** com pelo menos 10 registros em cada tabela para testes.
+- **Procedures** para encapsular inserções, garantindo consistência.
+- **Funções** para deleções com confirmação de sucesso/falha.
+- **Triggers** para registrar logs em todas as alterações e criar notificações em eventos importantes.
+- **Views** que consolidam informações de usuários, perfis de mentor e mentorado.
+- **Índices** para melhorar a performance de consultas frequentes.
+- **Cursor** para processamento batch e manutenção.
+- **Transações** com `START TRANSACTION`, `COMMIT` e `ROLLBACK` para operações críticas.
+- **Bloqueios explícitos** usando `LOCK TABLES` para garantir integridade em operações concorrentes.
+
+---
 
 ### 🔧 Procedures
 - Inserção de usuários, mentores, mentorados, sessões, mensagens, seguidores, bloqueios e grupos.
@@ -48,7 +63,7 @@ O projeto está organizado em arquivos SQL com diferentes responsabilidades:
 
 ## 💡 Como Executar
 
-1. Crie um banco no seu SGBD MySQL/MariaDB.
+1. Crie um banco no seu SGBD MySQL.
 2. Execute os scripts na ordem recomendada (01 a 09).
 3. Use as procedures e funções para interagir com o banco de forma encapsulada.
 
@@ -56,8 +71,8 @@ O projeto está organizado em arquivos SQL com diferentes responsabilidades:
 
 ## 📌 Requisitos
 
-- MySQL 8.x ou MariaDB compatível.
-- Um cliente de banco de dados (como DBeaver, MySQL Workbench, etc.)
+- MySQL 8.x ou compatível.
+- Um cliente de banco de dados (MySQL Workbench, etc.)
 
 ---
 
@@ -69,4 +84,4 @@ Sinta-se à vontade para sugerir melhorias, novas rotinas, ou reportar problemas
 
 ## 🧠 Autor
 
-Projeto acadêmico desenvolvido por [Seu Nome], com foco em práticas avançadas de banco de dados relacional.
+Projeto acadêmico desenvolvido por [Gian Marcos Boaretto, João Vitor Albuquerque Mendes Dantas , Fernando Grahl Zuffo e Pedro Arthur da Cruz Diniz], com foco em práticas avançadas de banco de dados relacional.
