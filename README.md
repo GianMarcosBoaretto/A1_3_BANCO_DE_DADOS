@@ -11,14 +11,15 @@ Os arquivos estão organizados conforme o tipo de modificação, seguindo o padr
 | Arquivo                      | Descrição                                             |
 |-----------------------------|-------------------------------------------------------|
 | `SCRIPTS_CREATE.sql`         | Criação das tabelas e relacionamentos                 |
-| `SCRIPTS_INSERT.sql`         | População inicial das tabelas com dados de exemplo    |
-| `SCRIPTS_PROCEDURE.sql`      | Procedures para inserção encapsulada                   |
-| `SCRIPTS_FUNCTION.sql`       | Funções para deleção controlada com retorno de status |
-| `SCRIPTS_TRIGGER.sql`        | Triggers para logs automáticos e notificações          |
-| `SCRIPTS_VIEW.sql`           | Views para consultas simplificadas e encapsuladas      |
+| `SCRIPTS_INSERTS.sql`         | População inicial das tabelas com dados de exemplo    |
+| `SCRIPTS_PROCEDURES.sql`      | Procedures para inserção encapsulada                   |
+| `SCRIPTS_FUNCTIONS.sql`       | Funções para deleção controlada com retorno de status |
+| `SCRIPTS_TRIGGERS.sql`        | Triggers para logs automáticos e notificações          |
+| `SCRIPTS_VIEWS.sql`           | Views para consultas simplificadas e encapsuladas      |
 | `SCRIPTS_INDEX.sql`          | Criação de índices para otimização                      |
 | `SCRIPTS_CURSOR.sql`         | Exemplo de cursor para processamento em lote           |
-| `SCRIPTS_TRANSACTION.sql`    | Exemplos de uso de transações e bloqueios (LOCK TABLE) |
+| `SCRIPTS_LOCK.sql`          | Exemplos de uso de bloqueios (LOCK TABLE)               |
+| MER_A1_3.mwb                | Modelagem de Entidade e Relacionamento                 |
 
 ---
 
