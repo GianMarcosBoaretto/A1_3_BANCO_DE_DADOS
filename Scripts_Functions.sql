@@ -1,41 +1,29 @@
 DELIMITER $$
 
-CREATE FUNCTION deletar_usuario(p_id INT)
-RETURNS TINYINT
+CREATE FUNCTION nome_grupo(p_id INT)
+RETURNS VARCHAR(100)
 DETERMINISTIC
 BEGIN
-    DECLARE v_count INT;
+    DECLARE v_nome VARCHAR(100);
 
-    -- Verifica se o usuário existe
-    SELECT COUNT(*) INTO v_count FROM usuarios WHERE id = p_id;
+    SELECT nome INTO v_nome FROM grupos_estudo WHERE id = p_id;
 
-    IF v_count = 0 THEN
-        RETURN 0; -- Não encontrou usuário para deletar
-    ELSE
-        DELETE FROM usuarios WHERE id = p_id;
-        RETURN 1; -- Deletou com sucesso
-    END IF;
+    RETURN IFNULL(v_nome, 'Grupo não encontrado');
 END$$
 
 DELIMITER ;
 
 DELIMITER $$
 
-CREATE FUNCTION deletar_grupo_estudo(p_id INT)
-RETURNS TINYINT
+CREATE FUNCTION total_grupos_usuario(p_usuario_id INT)
+RETURNS INT
 DETERMINISTIC
 BEGIN
-    DECLARE v_count INT;
+    DECLARE v_total INT;
 
-    -- Verifica se o grupo existe
-    SELECT COUNT(*) INTO v_count FROM grupos_estudo WHERE id = p_id;
+    SELECT COUNT(*) INTO v_total FROM usuarios_grupos WHERE usuario_id = p_usuario_id;
 
-    IF v_count = 0 THEN
-        RETURN 0; -- Grupo não encontrado
-    ELSE
-        DELETE FROM grupos_estudo WHERE id = p_id;
-        RETURN 1; -- Deletado com sucesso
-    END IF;
+    RETURN v_total;
 END$$
 
-DELIMITER ;
+DELIMITER ;
